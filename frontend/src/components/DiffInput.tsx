@@ -9,6 +9,7 @@ export default function DiffInput({setCommitMessage}: DiffInputProps) {
     try {
       const response = await createCommitMessage(diff);
       setCommitMessage(response.title + "\n\n" + response.description);
+      setDiff("");
       console.log("Commit message generated:", response);
     } catch (error) {
       console.error("Error generating commit message:", error);
