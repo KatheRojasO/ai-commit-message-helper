@@ -1,4 +1,6 @@
-export default function CommitSuggestionBox() {
+import type { CommitSuggestionBoxProps } from "../types/types";
+
+export default function CommitSuggestionBox({ message }: CommitSuggestionBoxProps) {
   return (
     <div className="result-section-container">
       <div className="result-header">
@@ -7,7 +9,7 @@ export default function CommitSuggestionBox() {
       </div>
 
       <div className="commit-suggestion">
-        <p>Generated commit</p>
+        <p>{message}</p>
       </div>
     </div>
   );

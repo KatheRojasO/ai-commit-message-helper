@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { createCommitMessage } from "../api/diff-analysis";
+import type { DiffInputProps } from "../types/types";
 
-export default function DiffInput() {
+export default function DiffInput({setCommitMessage}: DiffInputProps) {
   const [diff, setDiff] = useState<string>("");
 
   const onClickHandler = async () => {
     try {
       const response = await createCommitMessage(diff);
+      setCommitMessage(response.title + "\n\n" + response.description);
       console.log("Commit message generated:", response);
     } catch (error) {
       console.error("Error generating commit message:", error);
