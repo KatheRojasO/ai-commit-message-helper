@@ -36,6 +36,21 @@ app.post("/diff/analysis", async (req, res) => {
   }
 });
 
+app.get("/history", async (_req, res) => {
+  try{
+    const commits = await prisma.commitHistory.findMany({
+      orderBy: {
+        timestamp: 'desc',
+      },
+    });
+    res.json(commits);
+  } catch (error) {
+    console.error("Error fetching commit history:", error);
+    res.status(500).json({ error: "Something went wrong" });
+  }
+
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
