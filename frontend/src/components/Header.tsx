@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <div className="header-container">
@@ -6,7 +8,7 @@ export default function Header() {
         <h1 className="app-title">AI Commit Message Helper</h1>
       </div>
       <button className="nav-buttons history-button">
-        <a>📚 History</a>
+        <Link to="/history">📚 History</Link>
       </button>
     </div>
   );
