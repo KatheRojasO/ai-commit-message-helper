@@ -11,3 +11,8 @@ export type DiffInputProps = {
 export type CommitSuggestionBoxProps = {
   message: string;
 };
+
+export type LineChangeSummary = {
+  added: number;
+  removed: number;
+};
