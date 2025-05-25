@@ -1,8 +1,7 @@
 import type React from "react";
 
 export type CommitResponse = {
-  title: string;
-  description: string;
+  message: string;
 };
 
 export type DiffInputProps = {
