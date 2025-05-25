@@ -8,7 +8,8 @@ export default function DiffInput({setCommitMessage}: DiffInputProps) {
   const onClickHandler = async () => {
     try {
       const response = await createCommitMessage(diff);
-      setCommitMessage(response.title + "\n\n" + response.description);
+      console.log("Response from API:", response.message);
+      setCommitMessage(response.message);
       setDiff("");
       console.log("Commit message generated:", response);
     } catch (error) {
