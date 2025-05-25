@@ -1,7 +1,12 @@
 import express from "express";
 import cors from "cors";
 import { generateCommitMessage } from "./llm/generateCommitMessage";
+import { PrismaClient } from "./generated/prisma";
 
+//Database connection
+const prisma = new PrismaClient();
+
+// Initialize Express app
 const app = express();
 const port = 3000;
 
@@ -17,6 +22,13 @@ app.post("/diff/analysis", async (req, res) => {
   try {
     const { diff } = req.body;
     const message = await generateCommitMessage(diff);
+    const commit = await prisma.commitHistory.create({
+      data: {
+        diff: diff,
+        commit_message: message,
+      },
+    })
+    console.log("Commit saved to database:", commit);
     res.json({ message });
   } catch (error) {
     console.error("Error generating commit message:", error);
@@ -27,3 +39,4 @@ app.post("/diff/analysis", async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
