@@ -1,5 +1,7 @@
 @import "./base/layout.css";
 
+@import "./pages/HistoryPage.css";
+
 @import "./components/Header.css";
 @import "./components/DiffInput.css";
 @import "./components/CommitSuggestionBox.css";

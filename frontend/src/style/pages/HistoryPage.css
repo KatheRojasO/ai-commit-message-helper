@@ -1,0 +1,115 @@
+.history-header h1 {
+  margin-left: 10px;
+}
+
+.title-history-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.commit-item {
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.commit-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.commit-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-family: "Courier New", monospace;
+  line-height: 1.4;
+}
+
+.commit-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.commit-timestamp,
+.commit-differences,
+.commit-lines {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.commit-suggestion {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+  font-family: "Courier New", monospace;
+  margin-top: 16px;
+  white-space: pre-line;
+}
+
+.files-changed {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.file-tag {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-family: "Courier New", monospace;
+}
+
+.back-button-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-button {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.back-button:hover {
+  background: rgba(102, 126, 234, 0.2);
+  transform: translateY(-1px);
+}
+
+.delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.delete-button:hover {
+  background: rgba(220, 53, 69, 0.2);
+}
