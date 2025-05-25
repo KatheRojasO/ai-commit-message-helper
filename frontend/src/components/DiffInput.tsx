@@ -22,9 +22,16 @@ export default function DiffInput({setCommitMessage}: DiffInputProps) {
       <label className="input-label">Paste your git diff:</label>
       <textarea
         className="diff-input"
-        placeholder="1. Go to your git repository and run the command: git diff  2. Copy the output of the command 3. Paste it here"
+        placeholder={
+          "1. Go to your git repository and run the command: git diff\n" +
+          "2. Copy the output of the command\n" + 
+          "3. Paste it here"
+        }
         value={diff}
         onChange={(e) => setDiff(e.target.value)}
+        rows={7}
+        spellCheck={false}
+        aria-label="Git diff content"
       ></textarea>
       <button className="generate-button" onClick={onClickHandler}>Generate Commit Message</button>
     </div>
