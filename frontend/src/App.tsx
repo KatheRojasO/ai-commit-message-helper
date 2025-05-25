@@ -1,17 +1,13 @@
-import { useState } from "react";
-import CommitSuggestionBox from "./components/CommitSuggestionBox";
-import DiffInput from "./components/DiffInput";
-import Header from "./components/Header";
+import { Route, Routes } from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import HistoryPage from "./pages/HistoryPage";
 import "./style/styles.css";
 
 export default function App() {
-  const [commitMessage, setCommitMessage] = useState<string>("");
-
   return (
-    <div className="container">
-      <Header />
-      <DiffInput setCommitMessage={setCommitMessage} />
-      <CommitSuggestionBox message={commitMessage} />
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/history" element={<HistoryPage />} />
+    </Routes>
   );
 }
